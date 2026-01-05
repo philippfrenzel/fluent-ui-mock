@@ -1,0 +1,21 @@
+{
+  "name": "fluent-ui-mocks",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
+
+  "forwardPorts": [5173, 4173],
+
+  "portsAttributes": {
+    "5173": {
+      "label": "Vite dev",
+      "onAutoForward": "openBrowser"
+    },
+    "4173": {
+      "label": "Vite preview",
+      "onAutoForward": "ignore"
+    }
+  },
+
+  "postCreateCommand": "npm install",
+
+  "postAttachCommand": "bash -lc 'nohup npm run dev -- --host 0.0.0.0 --port 5173 > /tmp/vite-dev.log 2>&1 & echo \"Vite started. Log: /tmp/vite-dev.log\"'"
+}
