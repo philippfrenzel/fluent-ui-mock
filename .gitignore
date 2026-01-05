@@ -1,0 +1,5 @@
+node_modules
+/dist
+/mocks
+.DS_Store
+.env
